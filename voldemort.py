@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 
 import os
+import subprocess
+import pkgutil
+
+if pkgutil.find_loader("cryptography"):
+	pass
+else:
+        subprocess.call(['sh','./shell.sh'])
+
 from cryptography.fernet import Fernet
+
 
 files = []
 
